@@ -19,7 +19,6 @@ class DashboardContainer extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello</p>
         <NoteCreateForm handleNoteCreate={this.noteCreate} />
       </div>
     )

@@ -31,7 +31,7 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/' component={() => <dashboardContainer app={this.getNote()} />} />
+            <Route exact path='/' component={() => <DashboardContainer app={this.getNote()} />} />
           </section>
         </BrowserRouter>
       </main>
