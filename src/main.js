@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import DashboardContainer from './component/dashboard-container';
+import NoteList from './component/note-list';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class App extends React.Component {
     this.state = {
       notesArr: []
     }
-    this.getNote = this.getNote.bind(this)
+    this.getNote = this.getNote.bind(this);
   }
 
   getNote() {
@@ -31,7 +32,8 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/' component={() => <DashboardContainer app={this.getNote()} />} />
+            <Route exact path='/note' component={() => <DashboardContainer app={this.getNote()} />} />
+            <NoteList notesArr = {this.state.notesArr} />
           </section>
         </BrowserRouter>
       </main>
