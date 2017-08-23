@@ -1,7 +1,7 @@
 import './style/main.scss';
 
 import React from 'react';
-import ReactDOM from 'react';
+import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import DashboardContainer from './component/dashboard-container';
@@ -18,7 +18,7 @@ class App extends React.Component {
   getNote() {
     return {
       state: this.state,
-      setState: thi.setState.bind(this)
+      setState: this.setState.bind(this)
     }
   }
 
@@ -31,10 +31,12 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <route exact path='/' component={() => <dashboardContainer app={this.getNote()} />} />
+            <Route exact path='/' component={() => <dashboardContainer app={this.getNote()} />} />
           </section>
         </BrowserRouter>
       </main>
     )
   }
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));

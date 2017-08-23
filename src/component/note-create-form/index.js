@@ -39,9 +39,10 @@ class NoteCreateForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
           />
+        <input type="submit" />
       </form>
     )
   }
 }
 
-export default NoteCreateForm
+export default NoteCreateForm;
