@@ -11,7 +11,7 @@ class DashboardContainer extends React.Component {
 
   noteCreate(note) {
     note.id = uuid();
-    this.props.app.setState(state => ({
+    this.props.getNote.setState(state => ({
       notesArr: [...state.notesArr, note]
     }));
   }

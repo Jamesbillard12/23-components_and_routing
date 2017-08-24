@@ -14,6 +14,7 @@ class App extends React.Component {
       notesArr: []
     }
     this.getNote = this.getNote.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
   }
 
   getNote() {
@@ -21,6 +22,12 @@ class App extends React.Component {
       state: this.state,
       setState: this.setState.bind(this)
     }
+  }
+
+  deleteNote(title){
+    let notes = this.state.notesArr;
+    notes = notes.filter(note => note.title !== title);
+    this.setState({ notesArr: notes });
   }
 
   componentDidUpdate(){
@@ -32,8 +39,8 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/note' component={() => <DashboardContainer app={this.getNote()} />} />
-            <NoteList notesArr = {this.state.notesArr} />
+            <Route exact path='/note' component={() => <DashboardContainer getNote={this.getNote()} />} />
+            <NoteList notesArr={this.state.notesArr} deleteNote={this.deleteNote} />
           </section>
         </BrowserRouter>
       </main>
