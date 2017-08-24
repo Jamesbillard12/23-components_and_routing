@@ -39,7 +39,7 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/note' component={() => <DashboardContainer getNote={this.getNote()} />} />
+            <Route exact path='/' component={() => <DashboardContainer getNote={this.getNote()} />} />
             <NoteList notesArr={this.state.notesArr} deleteNote={this.deleteNote} />
           </section>
         </BrowserRouter>
